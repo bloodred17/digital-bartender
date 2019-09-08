@@ -27,9 +27,14 @@ const createCard = (cocktail) => {
     cardBody.appendChild(cardSubtitle);
 
     const cardText = document.createElement('p');
-    cardText.className = "card-text";
+    cardText.className = "card-text text-info";
     cardText.innerHTML = cocktail.description;
     cardBody.appendChild(cardText);
+    
+    const cardAuthor = document.createElement('p');
+    cardAuthor.className = "card-text text-secondary text-right";
+    cardAuthor.innerHTML = "Created By: "+cocktail.contributed_by;
+    cardBody.appendChild(cardAuthor);
 
     return container;
 }
